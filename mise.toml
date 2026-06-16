@@ -1,0 +1,26 @@
+[tools]
+rust = "latest"
+
+[tasks."dev:check"]
+description = "Lint and test in one shot"
+run = "mise run dev:clippy && mise run dev:test"
+
+[tasks."dev:test"]
+description = "Run unit tests (native, not WASM)"
+run = "cargo test"
+
+[tasks."dev:clippy"]
+description = "Run clippy with deny warnings"
+run = "cargo clippy -- -D warnings"
+
+[tasks."dev:build"]
+description = "Build WASM extension"
+run = "cargo build --target wasm32-wasip2 --release"
+
+[tasks."dev:format"]
+description = "Format code"
+run = "cargo fmt"
+
+[tasks."dev:doc"]
+description = "Generate and open API documentation"
+run = "cargo doc --no-deps --open"

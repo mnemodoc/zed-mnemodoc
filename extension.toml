@@ -1,0 +1,10 @@
+id = "mnemodoc"
+name = "Mnemodoc"
+description = "Auto-index and search project documentation via mcp-server and Ollama"
+version = "0.1.0"
+schema_version = 1
+authors = ["Nicolas Rodriguez <nico@nicoladmin.fr>"]
+repository = "https://github.com/mnemodoc/zed-mnemodoc"
+
+[context_servers.mnemodoc]
+name = "Mnemodoc"

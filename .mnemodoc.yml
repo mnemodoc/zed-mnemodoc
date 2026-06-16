@@ -1,0 +1,49 @@
+paths:
+  - .
+
+ollama:
+  host: http://localhost:11434
+  model: nomic-embed-text
+  timeout: 30
+  batch_size: 10
+
+search:
+  top_k: 5
+  mode: hybrid
+  recency_days: 14
+  recency_boost: 0.15
+  keyword_weight: 0.3
+
+server:
+  log_file: stderr
+  log_level: info
+
+# context: section prête pour get_project_context (pas encore dans le binaire serveur).
+# Quand la feature arrive, décommenter et appeler le tool en début de session.
+#
+# context:
+#   default: .claude/roles/developpeur-rust.md
+#   roles:
+#     - file: .claude/roles/developpeur-rust.md
+#       description: "Développeur Rust/WASM — modules purs, serde/schemars, wasm32-wasip2, zed_extension_api, clippy/tests"
+#       when_files: ["src/**/*.rs"]
+#       when_query: ["Rust", "WASM", "wasm32-wasip2", "serde", "schemars", "clippy", "cargo", "test", "module", "extension"]
+#
+#     - file: .claude/roles/integration-mcp.md
+#       description: "Intégration MCP / éditeur — context server, cycle de vie Zed, serve --stdio, sandbox WASM"
+#       when_files: ["src/lib.rs"]
+#       when_query: ["MCP", "context server", "Zed", "stdio", "serve", "sandbox", "CWD", "config", "lifecycle"]
+#
+#     - file: .claude/roles/release-ci.md
+#       description: "Release engineering / CI — platform.rs, asset GitHub Release, SERVER_VERSION, résolution binaire"
+#       when_files: ["src/platform.rs", "src/binary.rs", ".github/**/*.yml"]
+#       when_query: ["release", "CI", "asset", "GitHub Release", "SERVER_VERSION", "binaire", "version", "os", "arch", "download"]
+#
+#     - file: .claude/roles/expert-ia.md
+#       description: "Expert IA — LLM, MCP, agents, RAG, embeddings, Ollama, mnemodoc"
+#       when_query: ["IA", "LLM", "embedding", "RAG", "Ollama", "nomic-embed-text", "top_k", "sémantique", "retrieval", "mnemodoc"]
+#
+#     - file: .claude/roles/redacteur-doc.md
+#       description: "Rédacteur technique — README, CLAUDE.md, doc indexable, conventions ///"
+#       when_files: ["README.md", "CLAUDE.md", "**/*.md"]
+#       when_query: ["documentation", "rédige", "écris", "README", "doc", "structure", "indexable", "cohérence"]

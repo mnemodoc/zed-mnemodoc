@@ -1,0 +1,4 @@
+/target/
+/.claude/*
+!/.claude/roles/
+/extension.wasm
